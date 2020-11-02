@@ -3,8 +3,8 @@ pipeline {
 agent any
 
 tools {
-    maven 'Maven 3.6.3'
-    jdk 'JDK 8'
+    maven 'maven'
+    jdk 'java'
 }
 
 stages {
@@ -18,7 +18,7 @@ stages {
     stage ("Build") {
     
       steps {
-          sh 'mvn -Dmaven.test.failure.ignore=true clean install -f 'DevOps-Demo-WebApp/pom.xml'
+          sh 'mvn -Dmaven.test.failure.ignore=true clean install -f DevOps-Demo-WebApp/pom.xml'
           }
         }
         
