@@ -28,9 +28,9 @@ stages {
           }
       }
       
-      stage ("Slack notify") {
+      stage ("Slack notification") {
           steps {
-              slackSend channel: 'alerts', message: 'deployment was successful'
+              slackSend (channel: 'alerts', message: "deployment is successful, here is the info - Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
           }
       }
  }
